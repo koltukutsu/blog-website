@@ -288,11 +288,37 @@ a:focus {
 
 .bio {
   display: flex;
+  flex-direction: column;
   margin-bottom: var(--spacing-16);
+  align-items: flex-start;
+}
+
+.bios {
+  display: flex;
+  flex-direction: column;
+  /* align-items: ; */
 }
 
 .bio p {
   margin-bottom: var(--spacing-0);
+}
+
+.yazar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-block-start: 10px;
+}
+.yazar-adi {
+  font-weight: bold;
+  margin-right: px;
+}
+
+.bio-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .bio-avatar {

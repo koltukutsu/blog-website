@@ -1,7 +1,7 @@
 ---
-title: Hello World
+title: "0 - Giris Bu Kitap Neden Okunmali"
 date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+description: "Kitaba Giris"
 ---
 
 This is my first post on my new fake blog! How exciting!

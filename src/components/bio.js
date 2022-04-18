@@ -11,15 +11,26 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
-    query BioQuery {
+    query MyQuery {
       site {
         siteMetadata {
           author {
+            description
             name
+            siteUrl
+            social {
+              linkedin
+            }
             summary
           }
-          social {
-            twitter
+          author2 {
+            description
+            name
+            siteUrl
+            social {
+              linkedin
+            }
+            summary
           }
         }
       }
@@ -27,29 +38,69 @@ const Bio = () => {
   `)
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
+  const author_babacan = data.site.siteMetadata?.author
+  const author_aydin = data.site.siteMetadata?.author2
+  // const social = data.site.siteMetadata?.author2
 
   return (
     <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
+      <h2>Yazarlar</h2>
+      {author_babacan?.name && author_aydin?.name && (
+        <div className="bios">
+          <div className="yazar">
+            <StaticImage
+              className="bio-avatar"
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              src="../images/profile-pic.png"
+              width={50}
+              height={50}
+              quality={95}
+              alt="Profile picture"
+            />
+            <div class="bio-infos">
+              <span className="yazar-adi">{author_babacan.name}</span>
+              <p>
+                {author_babacan?.summary || null}
+                {` `}
+                <a
+                  href={`https://linkedin.com/in/${
+                    author_babacan.social?.linkedin || ``
+                  }`}
+                >
+                  Mehmet Semih BABACAN
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div className="yazar">
+            <StaticImage
+              className="bio-avatar"
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              src="../images/profile-pic.png"
+              width={50}
+              height={50}
+              quality={95}
+              alt="Profile picture"
+            />
+            <div className="bio-infos">
+              <span className="yazar-adi">{author_aydin.name}</span>
+              <p>
+                {author_aydin?.summary || null}
+                {` `}
+                <a
+                  href={`https://linkedin.com/in/${
+                    author_aydin.social?.linkedin || ``
+                  }`}
+                >
+                  Semih AYDIN
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   )

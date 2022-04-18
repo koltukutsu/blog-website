@@ -1,18 +1,43 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `SemihveSemih`,
+    title2: `SemihveSemih`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Mehmet Semih BABACAN`,
+      summary: `endustri ve bilgisayar muhendisi.`,
+      description: `Teknolojiyi ve ogrenmeyi seven biri.Oldukca seven biri. Astronomik olcekte seven biri.`,
+      siteUrl: `mehmetsemihbabacan.me`,
+      social: {
+        linkedin: `mehmetsemihbabacan`,
+      },
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
+    author2: {
+      name: `Semih AYDIN`,
+      summary: `endustri ve bilgisayar muhendisi.`,
+      description: `Teknolojiyi ve ogrenmeyi seven biri.Oldukca seven biri. Astronomik olcekte seven biri.`,
+      siteUrl: `mehmetsemihbabacan.me`,
+      social: {
+        linkedin: `ssemihaydnn`,
+      },
     },
   },
   plugins: [
     `gatsby-plugin-image`,
+    {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {
+        /**
+         * @property {boolean} [resetCSS=true]
+         * if false, this plugin will not use `<CSSReset />
+         */
+        resetCSS: true,
+        /**
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
+         */
+        isUsingColorMode: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
